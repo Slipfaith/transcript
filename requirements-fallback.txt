@@ -1,0 +1,6 @@
+# Запасной путь: PyTorch с CUDA 12.8 (поддерживает Blackwell / sm_120).
+# Ставится только если faster-whisper не заработал на GPU: install.bat fallback
+--extra-index-url https://download.pytorch.org/whl/cu128
+torch>=2.7
+transformers
+accelerate

@@ -1,0 +1,10 @@
+# Основной путь: faster-whisper (CTranslate2) на NVIDIA GPU
+faster-whisper>=1.1.0      # с 1.1.0 есть модель large-v3-turbo
+tqdm
+av<19                      # в PyAV 19 убрали параметр, который использует faster-whisper 1.2.1
+PySide6>=6.8,<7            # окно (app.py); проверено на 6.12.0
+sherpa-onnx>=1.12          # разметка спикеров (CPU, без PyTorch); проверено на 1.13.8
+
+# cuBLAS 12 и cuDNN 9 для CTranslate2 на Windows (около 1 ГБ)
+nvidia-cublas-cu12 ; sys_platform == "win32"
+nvidia-cudnn-cu12>=9,<10 ; sys_platform == "win32"
